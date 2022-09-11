@@ -18,7 +18,7 @@ export class RecipeService {
     new Recipe(
       'Big fat burger',
       'This is simply a test',
-      'https://bit.ly/3zEzXX6',
+      'https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350',
       [new Ingredient('Pepper', 1), new Ingredient('Bread', 2)]
     ),
   ];
