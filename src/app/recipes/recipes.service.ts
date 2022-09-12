@@ -8,20 +8,22 @@ import { Recipe } from './recipe.model';
 export class RecipeService {
 
   recipesChanged = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Jalapeno Pan pizza',
-      'This is simply a test',
-      'https://bit.ly/3zEzXX6',
-      [new Ingredient('Meat', 1), new Ingredient('Jalapeno', 2)]
-    ),
-    new Recipe(
-      'Big fat burger',
-      'This is simply a test',
-      'https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350',
-      [new Ingredient('Pepper', 1), new Ingredient('Bread', 2)]
-    ),
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe(
+  //     'Jalapeno Pan pizza',
+  //     'This is simply a test',
+  //     'https://bit.ly/3zEzXX6',
+  //     [new Ingredient('Meat', 1), new Ingredient('Jalapeno', 2)]
+  //   ),
+  //   new Recipe(
+  //     'Big fat burger',
+  //     'This is simply a test',
+  //     'https://c.ndtvimg.com/2022-06/gp4k2jro_burgers_625x300_20_June_22.jpg?im=FeatureCrop,algorithm=dnn,width=620,height=350',
+  //     [new Ingredient('Pepper', 1), new Ingredient('Bread', 2)]
+  //   ),
+  // ];
+
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) { }
   getRecipes() {
