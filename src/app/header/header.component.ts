@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipeService } from '../recipes/recipes.service';
 import { DataStorageService } from '../shared/data-storage.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { DataStorageService } from '../shared/data-storage.service';
 })
 export class HeaderComponent {
 
-  constructor(private dataStorageService: DataStorageService) { }
+  constructor(private dataStorageService: DataStorageService, private recipesService: RecipeService) { }
   onSaveRecipe() {
     this.dataStorageService.storeRecipes();
   }
 
   onFetchRecipes() {
-    this.dataStorageService.fetchRecipes();
+    this.dataStorageService.fetchRecipes().subscribe(recipes => {
+      this.recipesService.setRecipes(recipes);
+    });
   }
 }
