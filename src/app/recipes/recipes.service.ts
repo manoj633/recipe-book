@@ -10,7 +10,7 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [
     new Recipe(
-      'A test recipe',
+      'Jalapeno Pan pizza',
       'This is simply a test',
       'https://bit.ly/3zEzXX6',
       [new Ingredient('Meat', 1), new Ingredient('Jalapeno', 2)]
@@ -26,6 +26,11 @@ export class RecipeService {
   constructor(private slService: ShoppingListService) { }
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 
   getRecipe(id: number) {
