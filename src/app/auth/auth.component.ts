@@ -32,7 +32,7 @@ export class AuthComponent {
                 console.log(resData);
             }, error => {
                 console.log(error);
-                this.error = "An error occured";
+                this.error = error;
                 this.isLoading = false;
             })
         }
