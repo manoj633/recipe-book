@@ -12,21 +12,28 @@ export class AuthComponent {
     constructor(private authService: AuthService) { }
 
     isLoginMode = true;
+    isLoading = false;
+    error?: string;
 
     onSwitchMode() {
         this.isLoginMode = !this.isLoginMode;
     }
 
     onSubmit(form: NgForm) {
+        const email = form.value.email;
+        const password = form.value.password;
+        this.isLoading = true;
         if (this.isLoginMode) {
 
         } else {
-            const email = form.value.email;
-            const password = form.value.password;
+
             this.authService.signUp(email, password).subscribe(resData => {
+                this.isLoading = false;
                 console.log(resData);
             }, error => {
                 console.log(error);
+                this.error = "An error occured";
+                this.isLoading = false;
             })
         }
         form.reset();
