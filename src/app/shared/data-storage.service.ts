@@ -23,6 +23,6 @@ export class DataStorageService {
             })
         }), tap(recipes => {
             this.recipesService.setRecipes(recipes);
-        }));
+        }))
     }
 }
