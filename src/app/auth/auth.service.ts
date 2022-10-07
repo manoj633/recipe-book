@@ -48,10 +48,23 @@ export class AuthService {
         this.user$.next(null);
     }
 
+    autoLogin() {
+        const userData: { email: string, id: string, _token: string, _tokenExpirationDate: string } = JSON.parse(localStorage.getItem('userData'));
+        if (!userData) {
+            return;
+        }
+        const loadedUser = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
+
+        if (!loadedUser.token) {
+            this.user$.next(loadedUser);
+        }
+    }
+
     private handleAuthentication(email: string, Id: string, token: string, expiresIn: number) {
         const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
         const userData = new User(email, Id, token, expirationDate);
         this.user$.next(userData);
+        localStorage.setItem('userData', JSON.stringify(userData));
     }
 
     private handleError(errorRes: HttpErrorResponse) {
