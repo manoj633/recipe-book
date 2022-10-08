@@ -11,12 +11,12 @@ export class DataStorageService {
 
     storeRecipes() {
         const recipes = this.recipesService.getRecipes();
-        this.http.put('firebase_url/recipes.json', recipes).subscribe();
+        this.http.put('https://ng-recipe-book-abcdb-default-rtdb.firebaseio.com/recipes.json', recipes).subscribe();
     }
 
     fetchRecipes() {
         return this.authService.user$.pipe(take(1), exhaustMap(user => {
-            return this.http.get<Recipe[]>('firebase_url/recipes.json', { params: new HttpParams().set('auth', user.token) })
+            return this.http.get<Recipe[]>('https://ng-recipe-book-abcdb-default-rtdb.firebaseio.com/recipes.json', { params: new HttpParams().set('auth', user.token) })
         }), map(recipes => {
             return recipes.map(recipe => {
                 return { ...recipe, ingredients: recipe.ingredients ? recipe.ingredients : [] }
