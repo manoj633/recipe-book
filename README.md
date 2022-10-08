@@ -139,7 +139,7 @@ Live: https://ng-recipe-book-abcdb.web.app/
 
 Or you can scan the bellow QR code.
 
-![QR_code](https://user-images.githubusercontent.com/42727681/194718185-3b994e9e-f5ed-46f8-89c3-dcdfb15304f5.png)
+<img src="https://user-images.githubusercontent.com/42727681/194718185-3b994e9e-f5ed-46f8-89c3-dcdfb15304f5.png" style="width:200px"/>
 
 
 ## Development server
