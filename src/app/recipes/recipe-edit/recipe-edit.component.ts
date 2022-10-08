@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { RecipeService } from '../recipes.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class RecipeEditComponent implements OnInit {
   recipeForm!: FormGroup;
   constructor(private route: ActivatedRoute,
     private recipeService: RecipeService,
-    private router: Router) { }
+    private router: Router, private dataService: DataStorageService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -66,8 +67,11 @@ export class RecipeEditComponent implements OnInit {
     // The above code is equal to
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+      this.dataService.storeRecipes();
+
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
+      this.dataService.storeRecipes();
     }
     this.onCancel(); //to navigate away after saving we use same logic
   }
