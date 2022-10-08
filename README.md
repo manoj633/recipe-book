@@ -134,8 +134,13 @@ I am Manoj M .This project is a recipe book where you can add your recipes and c
 
 ### Deployment
 
-The website is deployed in Firebase
+The website is deployed in Firebase<br/>
 Live: https://ng-recipe-book-abcdb.web.app/
+
+Or you can scan the bellow QR code.
+
+![QR_code](https://user-images.githubusercontent.com/42727681/194718185-3b994e9e-f5ed-46f8-89c3-dcdfb15304f5.png)
+
 
 ## Development server
 
