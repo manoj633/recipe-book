@@ -18,16 +18,14 @@ import { AlertComponent } from './shared/alert/alert.component';
 import { RouterModule } from '@angular/router';
 import { RecipesModule } from './recipes/recipes.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-
     HeaderComponent,
     DropdownDirective,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +35,8 @@ import { ShoppingListModule } from './shopping-list/shopping-list.module';
     HttpClientModule,
     RouterModule,
     RecipesModule,
-    ShoppingListModule
+    ShoppingListModule,
+    SharedModule
   ],
   providers: [ShoppingListService, RecipeService, DataStorageService, RecipesResolverService, { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent]
