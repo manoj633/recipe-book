@@ -17,7 +17,6 @@ import { AuthModule } from './auth/auth.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    DropdownDirective
   ],
   imports: [
     BrowserModule,
