@@ -22,7 +22,6 @@ import { RecipesComponent } from "./recipes.component";
     ],
     imports: [
         RouterModule,
-        ReactiveFormsModule,
         RecipesRoutingModule,
         SharedModule
     ]

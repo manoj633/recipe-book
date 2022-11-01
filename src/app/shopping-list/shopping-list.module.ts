@@ -11,6 +11,6 @@ import { ShoppingListComponent } from "./shopping-list.component";
         ShoppingListComponent,
         ShoppingEditComponent
     ],
-    imports: [FormsModule, ShoppingListRoutingModule, SharedModule]
+    imports: [ShoppingListRoutingModule, SharedModule]
 })
 export class ShoppingListModule { }

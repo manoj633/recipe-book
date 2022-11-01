@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AlertComponent } from "./alert/alert.component";
 import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.component";
 
@@ -11,7 +12,9 @@ import { LoadingSpinnerComponent } from "./loading-spinner/loading-spinner.compo
     exports: [
         LoadingSpinnerComponent,
         AlertComponent,
-        CommonModule
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule
     ]
 })
 export class SharedModule { }
