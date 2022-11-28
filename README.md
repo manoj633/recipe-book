@@ -1,16 +1,60 @@
-# RecipeBook
+<h1 align="center" id="title">Recipe book</h1>
 
+<p align="center"><img src="https://socialify.git.ci/manoj633/recipe-book/image?language=1&amp;logo=https%3A%2F%2Fcdn-icons-png.flaticon.com%2F512%2F3565%2F3565418.png&amp;name=1&amp;owner=1&amp;pattern=Plus&amp;theme=Light" alt="project-image"></p>
 
-<a href="https://github.com/manoj633/recipe-book/blob/main/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/manoj633/recipe-book?style=for-the-badge"></a>
-![Repository Size](https://img.shields.io/github/repo-size/manoj633/recipe-book?style=for-the-badge)
-![Lines of Codes](https://img.shields.io/tokei/lines/github.com/manoj633/recipe-book?style=for-the-badge)
+<p id="description">An Application to save your favorite recipes and add the required ingredients to your shopping list</p>
 
-![GitHub last commit](https://img.shields.io/github/last-commit/manoj633/recipe-book?style=for-the-badge)
+<p align="center"><img src="https://img.shields.io/github/license/manoj633/recipe-book?style=for-the-badge" alt="shields">&nbsp;&nbsp;<img src="https://img.shields.io/github/stars/manoj633/recipe-book?style=for-the-badge" alt="shields">&nbsp;&nbsp;<img src="https://img.shields.io/github/forks/manoj633/recipe-book?style=for-the-badge" alt="shields"></p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
+<h2>🚀 Demo</h2>
 
-👋 Hi <br>
-I am Manoj M .This project is a recipe book where you can add your recipes and checkout your shopping list filled with ingredients based on the added recipes.
+[https://ng-recipe-book-abcdb.web.app/](https://ng-recipe-book-abcdb.web.app/)
+
+Or you can scan the bellow QR code.
+
+<img src="https://user-images.githubusercontent.com/42727681/194718185-3b994e9e-f5ed-46f8-89c3-dcdfb15304f5.png" style="width:200px"/>
+
+<h2>Project Screenshots:</h2>
+<br/>
+<h3>Recipe list:</h3>
+<img src="https://i.postimg.cc/C5QNJ8RC/recipes-list.png" alt="project-screenshot" width="4000" height="400/">
+<br/>
+<h3>Add a new Recipe:</h3>
+<img src="https://i.postimg.cc/0QND3QRV/recipe-save.png" alt="project-screenshot" width="4000" height="400/">
+<br/>
+<h3>Shopping list:</h3>
+<img src="https://i.postimg.cc/t4HPbDGZ/shopping-list.png" alt="project-screenshot" width="4000" height="400/">
+
+  
+  
+<h2>🧐 Features</h2>
+
+Here're some of the project's best features:
+
+*   View stored recipes
+*   Add a new recipe with images and ingredients required
+*   Edit an existing recipe
+*   Add ingredients of a recipe to the shopping list
+*   Delete a recipe
+*   Edit item and quantity of an ingredient in shopping list
+*   Add new item to Shopping list
+*   Token based Authentication with auto-logout functionality after token expiration
+
+  
+  
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+* HTML
+* CSS
+* TypeScript
+*   Angular
+*   Firebase
+*   NgRX
+<br/>
+
+<h2>📁 Folder structure</h2>
 
 ```
 📦 recipe-book
@@ -24,6 +68,7 @@ I am Manoj M .This project is a recipe book where you can add your recipes and c
 │  ├─ extensions.json
 │  ├─ launch.json
 │  └─ tasks.json
+├─ LICENSE
 ├─ README.md
 ├─ angular.json
 ├─ firebase.json
@@ -43,8 +88,10 @@ I am Manoj M .This project is a recipe book where you can add your recipes and c
 │  │  │  ├─ auth.component.html
 │  │  │  ├─ auth.component.ts
 │  │  │  ├─ auth.guard.ts
+│  │  │  ├─ auth.module.ts
 │  │  │  ├─ auth.service.ts
 │  │  │  └─ user.model.ts
+│  │  ├─ core.module.ts
 │  │  ├─ header
 │  │  │  ├─ header.component.css
 │  │  │  ├─ header.component.html
@@ -78,10 +125,12 @@ I am Manoj M .This project is a recipe book where you can add your recipes and c
 │  │  │  │  └─ recipe-start.component.ts
 │  │  │  ├─ recipe.model.ts
 │  │  │  ├─ recipes-resolver.service.ts
+│  │  │  ├─ recipes-routing.module.ts
 │  │  │  ├─ recipes.component.css
 │  │  │  ├─ recipes.component.html
 │  │  │  ├─ recipes.component.spec.ts
 │  │  │  ├─ recipes.component.ts
+│  │  │  ├─ recipes.module.ts
 │  │  │  └─ recipes.service.ts
 │  │  ├─ shared
 │  │  │  ├─ alert
@@ -91,19 +140,22 @@ I am Manoj M .This project is a recipe book where you can add your recipes and c
 │  │  │  ├─ data-storage.service.ts
 │  │  │  ├─ dropdown.directive.ts
 │  │  │  ├─ ingredient.model.ts
-│  │  │  └─ loading-spinner
-│  │  │     ├─ loading-spinner.component.css
-│  │  │     └─ loading-spinner.component.ts
+│  │  │  ├─ loading-spinner
+│  │  │  │  ├─ loading-spinner.component.css
+│  │  │  │  └─ loading-spinner.component.ts
+│  │  │  └─ shared.module.ts
 │  │  └─ shopping-list
 │  │     ├─ shopping-edit
 │  │     │  ├─ shopping-edit.component.css
 │  │     │  ├─ shopping-edit.component.html
 │  │     │  ├─ shopping-edit.component.spec.ts
 │  │     │  └─ shopping-edit.component.ts
+│  │     ├─ shopping-list-routing.module.ts
 │  │     ├─ shopping-list.component.css
 │  │     ├─ shopping-list.component.html
 │  │     ├─ shopping-list.component.spec.ts
 │  │     ├─ shopping-list.component.ts
+│  │     ├─ shopping-list.module.ts
 │  │     └─ shopping-list.service.ts
 │  ├─ assets
 │  │  └─ .gitkeep
@@ -121,24 +173,12 @@ I am Manoj M .This project is a recipe book where you can add your recipes and c
 └─ tsconfig.spec.json
 ```
 
-### Technology/Tools used
+<h2>🛡🏗️ Installation and setup:</h2>
 
-- HTML
-- CSS
-- Javascript.
-- VS Code.
-- BootStrap
-- TypeScript
-- Angular 13
 
-### Deployment
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.1.
 
-The website is deployed in Firebase<br/>
-Live: https://ng-recipe-book-abcdb.web.app/
 
-Or you can scan the bellow QR code.
-
-<img src="https://user-images.githubusercontent.com/42727681/194718185-3b994e9e-f5ed-46f8-89c3-dcdfb15304f5.png" style="width:200px"/>
 
 
 ## Development server
@@ -165,11 +205,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-### 📝 License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+<h2>🛡️ License:</h2>
 
-If you like this don't forget to ⭐ the repository.
+This project is licensed under the
 
-Thank You for visiting
-Have a nice day 😊
+<h2>💖Like my work?</h2>
+
+This project needs a ⭐️ from you. Don't forget to leave a star ⭐️. Thank you 🥰
